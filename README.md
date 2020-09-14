@@ -1,24 +1,8 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+```sql 
+create schema hello_rails_api_local collate utf8mb4_unicode_520_ci;
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+create user 'test'@'%' identified by 'test123';
+GRANT ALL PRIVILEGES ON hello_rails_api_local.* TO 'test'@'%';
+```
