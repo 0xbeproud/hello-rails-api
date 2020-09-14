@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_09_14_071905) do
+ActiveRecord::Schema.define(version: 2020_09_14_072800) do
 
   create_table "app_versions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci", force: :cascade do |t|
     t.bigint "app_id"
@@ -29,6 +29,28 @@ ActiveRecord::Schema.define(version: 2020_09_14_071905) do
   create_table "apps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci", force: :cascade do |t|
     t.string "os_type", null: false
     t.string "store_url", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "devices", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci", force: :cascade do |t|
+    t.bigint "user_id"
+    t.string "device_uuid", null: false
+    t.string "os_type", null: false
+    t.string "os_version", null: false
+    t.string "app_version", null: false
+    t.string "app_build_code", null: false
+    t.string "manufacturer"
+    t.string "model"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["device_uuid"], name: "index_devices_on_device_uuid", unique: true
+    t.index ["user_id"], name: "index_devices_on_user_id"
+  end
+
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "password", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

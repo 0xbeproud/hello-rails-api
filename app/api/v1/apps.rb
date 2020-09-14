@@ -12,7 +12,11 @@ module API::V1
 
       desc "hello api"
       get :hello do
-        present :message, 'hello'
+
+        app = App.find_by(os_type: 'ANDROID')
+        app.app_versions
+
+        present app.app_versions, with: API::Entities::AppVersionEntity
       end
     end
   end

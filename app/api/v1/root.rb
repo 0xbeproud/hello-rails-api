@@ -27,6 +27,7 @@ module API::V1
     end
 
     mount API::V1::Apps
+    mount API::V1::Users
 
     # mount 밑에 있어야 함.
     add_swagger_documentation info: {
