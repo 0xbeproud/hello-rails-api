@@ -19,6 +19,9 @@ module HelloRailsApi
     # the framework and any gems in your application.
     config.autoloader = :classic
 
+    config.eager_load_paths << Rails.root.join('lib')
+    config.autoload_paths << "#{Rails.root}/lib"
+
     config.eager_load_paths << Rails.root.join('app')
     config.autoload_paths << Rails.root.join('app')
     config.eager_load_namespaces << Grape

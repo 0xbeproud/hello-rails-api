@@ -23,9 +23,9 @@ module API::Helpers
     def authenticate_app!
       init_request_context
 
-      raise API::ApiExceptions::HeaderNotFoundException, "app_version" unless @request_context.app_version.present?
-      raise API::ApiExceptions::HeaderNotFoundException, "device_os_type" unless @request_context.device_os_type.present?
-      raise API::ApiExceptions::HeaderNotFoundException, 'device_uuid' unless @request_context.device_uuid.present?
+      raise API::Exceptions::HeaderNotFoundException, "app_version" unless @request_context.app_version.present?
+      raise API::Exceptions::HeaderNotFoundException, "device_os_type" unless @request_context.device_os_type.present?
+      raise API::Exceptions::HeaderNotFoundException, 'device_uuid' unless @request_context.device_uuid.present?
     end
   end
 end
