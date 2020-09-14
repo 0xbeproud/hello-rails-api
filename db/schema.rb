@@ -10,6 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 0) do
+ActiveRecord::Schema.define(version: 2020_09_14_071905) do
+
+  create_table "app_versions", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci", force: :cascade do |t|
+    t.bigint "app_id"
+    t.string "version", null: false
+    t.string "build_code", null: false
+    t.boolean "enabled", null: false
+    t.integer "update_type", default: 0, null: false
+    t.string "update_title", null: false
+    t.string "update_description", null: false
+    t.datetime "publish_at", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["app_id"], name: "index_app_versions_on_app_id"
+  end
+
+  create_table "apps", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_520_ci", force: :cascade do |t|
+    t.string "os_type", null: false
+    t.string "store_url", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
 end

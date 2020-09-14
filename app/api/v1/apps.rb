@@ -7,12 +7,12 @@ module API::V1
     resources :apps do
       desc "welcome api"
       get :welcome do
-        {message: 'welcome'}
+        present :message, 'welcome'
       end
 
       desc "hello api"
       get :hello do
-        'hello'
+        present :message, 'hello'
       end
     end
   end
