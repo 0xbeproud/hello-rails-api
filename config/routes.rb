@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  get 'register/info1'
+  get 'register/info2'
+  get 'visitor/main'
+
+  devise_for :users, :controllers => {omniauth_callbacks: 'user/omniauth_callbacks'}
 
   mount GrapeSwaggerRails::Engine => '/swagger'
 

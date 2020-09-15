@@ -63,4 +63,6 @@ gem 'grape_on_rails_routes'
 gem 'grape-active_model_serializers'
 
 gem 'fcm'
+gem 'devise'
 gem 'omniauth-kakao'
+gem 'figaro'
