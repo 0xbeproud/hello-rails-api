@@ -64,5 +64,5 @@ gem 'grape-active_model_serializers'
 
 gem 'fcm'
 gem 'devise'
-gem 'omniauth-kakao'
+gem 'omniauth-kakao', git: 'https://github.com/borijuyeong/omniauth-kakao'
 gem 'figaro'
